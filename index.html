@@ -41,18 +41,27 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             grid-gap: 20px;
+            position: relative; /* Needed for positioning of images */
         }
         .gallery img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            position: absolute; /* Position images absolutely */
+            top: 0; /* Start at the top of the container */
+            left: 0; /* Start at the left of the container */
+            opacity: 0; /* Initially hide images */
+            transition: opacity 0.5s ease; /* Smooth transition effect */
+        }
+        .gallery img.active {
+            opacity: 1; /* Make the active image visible */
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website!</h1>
-        <p>NIRBHAY KUMAR SINGH...</p>
+        <h1>Welcome to My Innovative Website!</h1>
+        <p>Interactive header content goes here...</p>
     </header>
     <div class="container">
         <div class="section">
@@ -64,44 +73,13 @@
                 <p>Strong professional and technical knowledge while pursuing a Master's degree focused in Communication and Signal Processing from Indian institute of technology Madras (IITM).</p>
                 <p>8.5 years of experience in building and implementing innovations across the high-speed FPGA platform.</p>
                 <!-- Add more details about yourself -->
-                <ul>
-                <li>Pioneer in engineering a single card solution for Digital transceiver for Mixed-signal processing using intel FPGA with SoC for Radar application.</li>
-                <li>Developed Digital pre-distortion technique(DPD) using FPGA-based signal processing board and Matlab.</li>
-                <li>Invented firmware for Digital transceivers and Timing generators for RAWL MKIIA, IFF RADAR, and five more projects in defense electronics.</li>
-                <li>Received Excellent R&D award in the innovation category for the design and development of "Direct sampling receiver for IFF radar" in 2016-17.</li>
-                <li>Received Excellent R&D award in the innovation category for the design and development of "Programmable RF and SoC based processing module for IFF MKXIIA - CIT" in 2019-20.</li>
-                <li>Received Excellent R&D award in the innovation category for the design and development of "RFSoC based Integrated Processor Module " in 2020-23.</li>
-                <li>Received Excellent R&D award in the Excellent Technology project for the design and development of "MKXIIA - CIT" in 2020-23.</li>
-                <li>Skilled in RTL Design, VHDL, System Integration Testing, Algorithms and Matlab.</li>
-                <li>Authored 6 patents, 2 copyrights, and 7 international papers demonstrating engineering marvels in defense and aerospace.</li>
-            </ul>
-                
             </div>
         </div>
         <div class="section">
-            <h2 onclick="toggleSection('projects')">Projects</h2>
-            <div id="projects-content" class="section-content">
-                <p>Coming Soon...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2 onclick="toggleSection('research')">Research Papers</h2>
-            <div id="research-content" class="section-content">
-                <p>Coming Soon...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2 onclick="toggleSection('patents')">Patents</h2>
-            <div id="patents-content" class="section-content">
-                <p>YComing Soon...</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 onclick="toggleSection('gallery')">Gallery</h2>
+            <h2>Gallery</h2>
             <div id="gallery-content" class="section-content">
                 <div class="gallery">
-                    <img src="Photo.jpg" alt="Image 1">
+                    <img src="Photo.jpg" alt="Image 1" class="active">
                     <img src="Photo.jpg" alt="Image 2">
                     <img src="Photo.jpg" alt="Image 3">
                     <!-- Add more images -->
@@ -109,5 +87,19 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript code for slideshow functionality
+        var images = document.querySelectorAll('.gallery img');
+        var currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 3000); // Change image every 3 seconds
+    </script>
 </body>
 </html>
