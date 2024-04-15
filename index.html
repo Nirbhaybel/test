@@ -30,7 +30,6 @@
         .section-content {
             display: none;
         }
-        /* Add styles for other components */
     </style>
 </head>
 <body>
@@ -40,18 +39,29 @@
     </header>
     <div class="container">
         <div class="section">
-            <h2 onclick="toggleSection('profile')">My Profile</h2>
+            <h2 onclick="toggleSection('profile')">About Me</h2>
             <div id="profile-content" class="section-content">
-                <!-- Dynamic profile content goes here... -->
+                <p>Your about me content goes here...</p>
             </div>
         </div>
         <div class="section">
-            <h2 onclick="toggleSection('timeline')">Career Timeline</h2>
-            <div id="timeline-content" class="section-content">
-                <!-- Dynamic timeline content goes here... -->
+            <h2 onclick="toggleSection('projects')">Projects</h2>
+            <div id="projects-content" class="section-content">
+                <p>Your projects content goes here...</p>
             </div>
         </div>
-        <!-- Add more sections as needed -->
+        <div class="section">
+            <h2 onclick="toggleSection('research')">Research Papers</h2>
+            <div id="research-content" class="section-content">
+                <p>Your research papers content goes here...</p>
+            </div>
+        </div>
+        <div class="section">
+            <h2 onclick="toggleSection('patents')">Patents</h2>
+            <div id="patents-content" class="section-content">
+                <p>Your patents content goes here...</p>
+            </div>
+        </div>
     </div>
 
     <script>
