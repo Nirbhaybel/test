@@ -30,38 +30,32 @@
         .section-content {
             display: none;
         }
+        .profile-img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website!</h1>
-        <p>Nirbhay Kumar Singh...</p>
+        <h1>Welcome to My Innovative Website!</h1>
+        <p>Interactive header content goes here...</p>
     </header>
     <div class="container">
         <div class="section">
             <h2 onclick="toggleSection('profile')">About Me</h2>
             <div id="profile-content" class="section-content">
-                <p>Your about me content goes here...</p>
+                <img src="Photo.jpg" alt="Your Name" class="profile-img">
+                <p><strong>Mixed Signal Processing and DSP Design | RTL | Building & Implementing Innovations across the high-speed FPGA | IITM | Deputy manager (R&D) at Product development and innovation center, Bharat Electronics Limited(MoD)</strong></p>
+                <p>Experienced Deputy Manager with a demonstrated history of working in the Defense & Aerospace industry.</p>
+                <p>Strong professional and technical knowledge while pursuing a Master's degree focused in Communication and Signal Processing from Indian institute of technology Madras (IITM).</p>
+                <p>8.5 years of experience in building and implementing innovations across the high-speed FPGA platform.</p>
+                <!-- Add more details about yourself -->
             </div>
         </div>
-        <div class="section">
-            <h2 onclick="toggleSection('projects')">Projects</h2>
-            <div id="projects-content" class="section-content">
-                <p>Your projects content goes here...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2 onclick="toggleSection('research')">Research Papers</h2>
-            <div id="research-content" class="section-content">
-                <p>Your research papers content goes here...</p>
-            </div>
-        </div>
-        <div class="section">
-            <h2 onclick="toggleSection('patents')">Patents</h2>
-            <div id="patents-content" class="section-content">
-                <p>Your patents content goes here...</p>
-            </div>
-        </div>
+        <!-- Add other sections -->
     </div>
 
     <script>
